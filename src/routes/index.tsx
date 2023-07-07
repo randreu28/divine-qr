@@ -3,9 +3,9 @@ import type { DocumentHead } from "@builder.io/qwik-city";
 
 export default component$(() => {
   return (
-    <>
-      <h1>hello Qwik</h1>
-    </>
+    <div class="h-screen flex justify-center items-center">
+      <h1 class="text-5xl">Hello from Qwik</h1>
+    </div>
   );
 });
 
