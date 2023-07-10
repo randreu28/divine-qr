@@ -4,9 +4,11 @@ import {
   RouterOutlet,
   ServiceWorkerRegister,
 } from "@builder.io/qwik-city";
-import { RouterHead } from "./components/router-head/router-head";
+import { RouterHead } from "./components/RouterHead";
 
 import "./global.css";
+import { NavBar } from "./components/NavBar";
+import { Footer } from "./components/Footer";
 
 export default component$(() => {
   /**
@@ -24,8 +26,10 @@ export default component$(() => {
         <RouterHead />
         <ServiceWorkerRegister />
       </head>
-      <body lang="en">
+      <body class="max-w-6xl mx-auto" lang="en">
+        <NavBar />
         <RouterOutlet />
+        <Footer />
       </body>
     </QwikCityProvider>
   );
