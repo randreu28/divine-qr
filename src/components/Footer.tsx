@@ -3,11 +3,11 @@ import { component$ } from "@builder.io/qwik";
 export const Footer = component$(() => {
   return (
     <footer class="">
-      <div class="max-w-6xl m-auto flex flex-col items-center sm:flex-row justify-between pt-2 px-3 text-gray-500">
+      <div class="m-auto flex max-w-6xl flex-col items-center justify-between px-3 pt-2 text-gray-500 sm:flex-row">
         <p>
           For any inquiries,{" "}
           <a
-            class="underline text-blue-400 my-auto py-2"
+            class="my-auto py-2 text-blue-400 underline"
             href="mailto:randreu28@gmail.com"
           >
             email us
@@ -22,7 +22,7 @@ export const Footer = component$(() => {
             rel="noreferrer"
           >
             <svg
-              class="h-8 w-auto fill-current text-black dark:text-white hover:cursor-pointer"
+              class="h-8 w-auto fill-current text-black hover:cursor-pointer dark:text-white"
               xmlns="http://www.w3.org/2000/svg"
               width="24"
               height="24"
@@ -33,7 +33,7 @@ export const Footer = component$(() => {
           </a>
         </div>
       </div>
-      <div class="flex pb-5 px-3 m-auto pt-5 border-t border-gray-500 text-gray-500 text-sm flex-col md:flex-row max-w-6xl justify-center">
+      <div class="m-auto flex max-w-6xl flex-col justify-center border-t border-gray-500 px-3 py-5 text-sm text-gray-500 md:flex-row">
         © Copyright 2023. All Rights Reserved.
       </div>
     </footer>

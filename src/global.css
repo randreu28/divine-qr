@@ -5,3 +5,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root, input, select, textarea{
+    @apply bg-my-yw dark:bg-black dark:text-white;
+}
