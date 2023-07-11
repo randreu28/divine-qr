@@ -26,7 +26,7 @@ export default component$(() => {
         <RouterHead />
         <ServiceWorkerRegister />
       </head>
-      <body class="max-w-6xl mx-auto" lang="en">
+      <body class="max-w-6xl mx-auto dark:bg-black dark:text-white" lang="en">
         <NavBar />
         <RouterOutlet />
         <Footer />

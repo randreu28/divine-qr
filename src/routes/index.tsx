@@ -10,11 +10,11 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "Welcome to Qwik",
+  title: "Divine QR",
   meta: [
     {
       name: "description",
-      content: "Qwik site description",
+      content: "A QR art generator",
     },
   ],
 };

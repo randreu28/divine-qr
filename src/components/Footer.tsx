@@ -22,7 +22,7 @@ export const Footer = component$(() => {
             rel="noreferrer"
           >
             <svg
-              class="h-8 w-auto fill-current text-black hover:cursor-pointer"
+              class="h-8 w-auto fill-current text-black dark:text-white hover:cursor-pointer"
               xmlns="http://www.w3.org/2000/svg"
               width="24"
               height="24"
