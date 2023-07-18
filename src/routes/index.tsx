@@ -79,17 +79,17 @@ export default component$(() => {
 
       <span class="flex w-full gap-5 pb-20">
         <button
+          type="submit"
+          class="rounded border border-gray-400 bg-white px-4 py-2 duration-200 hover:opacity-75 dark:bg-neutral-900"
+        >
+          Generate
+        </button>
+        <button
           onClick$={() => reset(formstore)}
           type="button"
           class="rounded border border-gray-400 bg-white px-4 py-2 duration-200 hover:opacity-75 dark:bg-neutral-900"
         >
           Clear prompt
-        </button>
-        <button
-          type="submit"
-          class="rounded border border-gray-400 bg-white px-4 py-2 duration-200 hover:opacity-75 dark:bg-neutral-900"
-        >
-          Generate
         </button>
       </span>
 
