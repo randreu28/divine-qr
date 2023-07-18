@@ -26,11 +26,17 @@ export default component$(() => {
   const { value } = useDarkMode();
   return (
     <>
-      <NavBar />
-      <main class={`mx-auto max-w-6xl ${value.isDarkMode ? "dark" : ""}`}>
-        <Slot />
+      <main class={` ${value.isDarkMode ? "dark" : ""} `}>
+        <div class="bg-my-yw dark:bg-black dark:text-white">
+          <NavBar />
+
+          <div class="mx-auto max-w-6xl">
+            <Slot />
+          </div>
+
+          <Footer />
+        </div>
       </main>
-      <Footer />
     </>
   );
 });

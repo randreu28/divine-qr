@@ -23,7 +23,7 @@ export const NavBar = component$(() => {
   });
 
   return (
-    <nav class="flex items-center justify-between border-b border-my-yw p-4">
+    <nav class="flex items-center justify-between border-b border-gray-500 p-4 dark:border-my-yw">
       <Favicon class="h-10 w-fit fill-current" />
       <HiMoonSolid
         class="h-8 w-fit fill-current hover:cursor-pointer"
