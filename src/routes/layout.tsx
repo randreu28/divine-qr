@@ -1,6 +1,8 @@
 import { component$, Slot } from "@builder.io/qwik";
 import type { RequestHandler } from "@builder.io/qwik-city";
 import { routeLoader$ } from "@builder.io/qwik-city";
+import { Footer } from "~/components/Footer";
+import { NavBar } from "~/components/NavBar";
 
 export const onGet: RequestHandler = async ({ cacheControl }) => {
   // Control caching for this request for best performance and to reduce hosting costs:
@@ -13,18 +15,22 @@ export const onGet: RequestHandler = async ({ cacheControl }) => {
   });
 };
 
-export const useServerTimeLoader = routeLoader$(() => {
+export const useDarkMode = routeLoader$(({ cookie }) => {
+  const isDarkMode = cookie.get("isDarkMode")?.value === "true";
   return {
-    date: new Date().toISOString(),
+    isDarkMode: isDarkMode,
   };
 });
 
 export default component$(() => {
+  const { value } = useDarkMode();
   return (
     <>
-      <main>
+      <NavBar />
+      <main class={`mx-auto max-w-6xl ${value.isDarkMode ? "dark" : ""}`}>
         <Slot />
       </main>
+      <Footer />
     </>
   );
 });

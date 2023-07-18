@@ -7,8 +7,6 @@ import {
 import { RouterHead } from "./components/RouterHead";
 
 import "./global.css";
-import { NavBar } from "./components/NavBar";
-import { Footer } from "./components/Footer";
 
 export default component$(() => {
   /**
@@ -26,10 +24,8 @@ export default component$(() => {
         <RouterHead />
         <ServiceWorkerRegister />
       </head>
-      <body class="mx-auto max-w-6xl" lang="en">
-        <NavBar />
+      <body class="" lang="en">
         <RouterOutlet />
-        <Footer />
       </body>
     </QwikCityProvider>
   );
