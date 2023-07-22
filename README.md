@@ -2,7 +2,7 @@
 
 A QR art generator using IA and open-source LLM's from [huggingface](https://huggingface.co/)!
 
-![img](public/favicon-dark.svg)
+![img](readme1.png)
 
 ![img](readme.jpg)
 
