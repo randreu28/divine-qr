@@ -1,12 +1,37 @@
-# Qwik City App ⚡️
+# Divine QR ⚡️
 
-- [Qwik Docs](https://qwik.builder.io/)
-- [Discord](https://qwik.builder.io/chat)
-- [Qwik GitHub](https://github.com/BuilderIO/qwik)
-- [@QwikDev](https://twitter.com/QwikDev)
-- [Vite](https://vitejs.dev/)
+A QR art generator using IA and open-source LLM's from [huggingface](https://huggingface.co/)!
 
----
+![img](public/favicon-dark.svg)
+
+![img](readme.jpg)
+
+🚨 Disclaimer 🚨
+
+This project was discontinuated due to some incompatibilities with the techonologies chosen for the project.The project is deployed using Deno, but the hugginface client is not compatible. As the project was merely academical, it wasn't worth the effort persuing the solution (ex: switching from Deno to Node and deploying to Vercel instead of Deno Deploy)
+
+You can still run this project locally without any problems!
+
+## Quick start
+
+1. Initalize the project
+
+```
+git clone https://github.com/randreu28/divine-qr
+yarn install
+```
+
+2. Create an `.env.local` file with your personal hugginface API key, like so:
+
+```
+VITE_HF_TOKEN="..."
+```
+
+3. Start the development enviroment and enjoy!
+
+```
+yarn dev
+```
 
 ## Project Structure
 
