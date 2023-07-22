@@ -2,6 +2,8 @@ import { component$ } from "@builder.io/qwik";
 import { routeLoader$, z, type DocumentHead } from "@builder.io/qwik-city";
 import type { InitialValues } from "@modular-forms/qwik";
 import { formAction$, reset, useForm, zodForm$ } from "@modular-forms/qwik";
+import type { QR } from "~/utils/hugginface";
+import { generateQR } from "~/utils/hugginface";
 
 const promptSchema = z.object({
   content: z.string(),
@@ -17,18 +19,27 @@ export const useFormLoader = routeLoader$<InitialValues<PromptForm>>(() => ({
   negativePrompt: undefined,
 }));
 
-export const useFormAction = formAction$<PromptForm>((values) => {
-  console.log(values);
+/**
+ * TODO: Figure out how to properly utilize the second generic type.
+ * This also, due to the nature of how server actions work on Qwik,
+ * generates a very long endpoint with the base64 image as param in the url,
+ * resulting in a 431 HTTP error code.
+ **/
+export const useFormAction = formAction$<PromptForm, any>(async (values) => {
+  return await generateQR(values);
 }, zodForm$(promptSchema));
 
 export default component$(() => {
-  const [formstore, { Form, Field }] = useForm<PromptForm>({
+  const [formstore, { Form, Field }] = useForm<PromptForm, QR>({
     loader: useFormLoader(),
     action: useFormAction(),
   });
 
   return (
-    <Form class="flex h-screen flex-col items-center space-y-5 p-5">
+    <Form
+      reloadDocument={false}
+      class="flex h-screen flex-col items-center space-y-5 p-5"
+    >
       <Field name="content">
         {(field, props) => (
           <span class="flex w-full flex-col gap-3">
@@ -93,8 +104,16 @@ export default component$(() => {
         </button>
       </span>
 
-      <div class="flex h-full w-full items-center justify-center rounded border border-gray-400 bg-white text-gray-400  dark:bg-neutral-900">
+      <div class="flex h-full w-full flex-col items-center justify-center gap-10 rounded border border-gray-400 bg-white text-gray-400 dark:bg-neutral-900">
         Your generated QR will be shown here
+        {formstore.submitting && <p>loading...</p>}
+        {formstore.response.data && (
+          <img
+            src={formstore.response.data as unknown as string}
+            width={200}
+            height={200}
+          />
+        )}
       </div>
     </Form>
   );
